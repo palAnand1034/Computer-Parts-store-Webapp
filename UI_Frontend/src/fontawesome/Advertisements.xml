@@ -1,0 +1,13 @@
+<Advertisements>
+    <Ad>
+        <ImageUrl>https://www.pcstudio.in/wp-content/uploads/2023/10/kingston-festive-season-special-offer-banner-home.jpg</ImageUrl>
+        <NavigateUrl>https://www.pcstudio.in/product-category/brand/brand-kingston/</NavigateUrl>
+        <AlternateText>Advertisement 1</AlternateText>
+    </Ad>
+    <Ad>
+        <ImageUrl>https://www.pcstudio.in/wp-content/uploads/2023/10/intel-14th-gen-processor-banner-home.jpg</ImageUrl>
+        <NavigateUrl>https://www.pcstudio.in/product-tag/intel-14th-gen-processors/</NavigateUrl>
+        <AlternateText>Advertisement 2</AlternateText>
+    </Ad>
+    <!-- Add more <Ad> elements for additional ads -->
+</Advertisements>

@@ -1,0 +1,585 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E875879-4C79-4739-88E2-701895B580EB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Admin</RootNamespace>
+    <AssemblyName>Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\css\bootstrap.min.css" />
+    <Content Include="Assets\Images\css\elegant-icons.css" />
+    <Content Include="Assets\Images\css\font-awesome.min.css" />
+    <Content Include="Assets\Images\css\magnific-popup.css" />
+    <Content Include="Assets\Images\css\nice-select.css" />
+    <Content Include="Assets\Images\css\register.css" />
+    <Content Include="Assets\Images\css\slicknav.min.css" />
+    <Content Include="Assets\Images\css\style.css" />
+    <Content Include="Assets\Images\generaluser.png" />
+    <Content Include="Assets\Images\lib\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\Images\lib\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\Advertisements.xml" />
+    <Content Include="Assets\Images\lib\fontawesome\css\all.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\all.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\brands.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\brands.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\fontawesome.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\fontawesome.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\regular.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\regular.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\solid.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\solid.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\svg-with-js.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\svg-with-js.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v4-font-face.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v4-font-face.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v4-shims.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v4-shims.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v5-font-face.css" />
+    <Content Include="Assets\Images\lib\fontawesome\css\v5-font-face.min.css" />
+    <Content Include="Assets\Images\lib\fontawesome\js\all.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\all.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\brands.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\brands.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\conflict-detection.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\conflict-detection.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\fontawesome.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\fontawesome.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\regular.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\regular.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\solid.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\solid.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\v4-shims.js" />
+    <Content Include="Assets\Images\lib\fontawesome\js\v4-shims.min.js" />
+    <Content Include="Assets\Images\lib\fontawesome\LICENSE.txt" />
+    <Content Include="Assets\Images\lib\fontawesome\sprites\brands.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\sprites\regular.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\sprites\solid.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\42-group.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\500px.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\accessible-icon.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\accusoft.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\adn.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\adversal.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\affiliatetheme.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\airbnb.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\algolia.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\alipay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\amazon-pay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\amazon.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\amilia.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\android.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\angellist.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\angrycreative.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\angular.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\app-store-ios.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\app-store.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\apper.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\apple-pay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\apple.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\artstation.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\asymmetrik.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\atlassian.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\audible.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\autoprefixer.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\avianex.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\aviato.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\aws.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bandcamp.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\battle-net.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\behance.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bilibili.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bimobject.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bitbucket.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bitcoin.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bity.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\black-tie.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\blackberry.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\blogger-b.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\blogger.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bluetooth-b.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bluetooth.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bootstrap.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\bots.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\btc.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\buffer.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\buromobelexperte.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\buy-n-large.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\buysellads.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\canadian-maple-leaf.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-amazon-pay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-amex.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-apple-pay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-diners-club.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-discover.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-jcb.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-mastercard.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-paypal.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-stripe.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cc-visa.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\centercode.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\centos.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\chrome.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\chromecast.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cloudflare.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cloudscale.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cloudsmith.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cloudversify.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cmplid.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\codepen.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\codiepie.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\confluence.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\connectdevelop.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\contao.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cotton-bureau.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cpanel.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-by.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-nc-eu.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-nc-jp.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-nc.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-nd.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-pd-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-pd.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-remix.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-sa.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-sampling-plus.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-sampling.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-share.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons-zero.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\creative-commons.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\critical-role.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\css3-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\css3.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\cuttlefish.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\d-and-d-beyond.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\d-and-d.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dailymotion.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dashcube.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\debian.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\deezer.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\delicious.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\deploydog.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\deskpro.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dev.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\deviantart.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dhl.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\diaspora.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\digg.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\digital-ocean.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\discord.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\discourse.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dochub.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\docker.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\draft2digital.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dribbble.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dropbox.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\drupal.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\dyalog.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\earlybirds.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ebay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\edge-legacy.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\edge.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\elementor.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ello.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ember.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\empire.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\envira.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\erlang.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ethereum.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\etsy.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\evernote.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\expeditedssl.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\facebook-f.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\facebook-messenger.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\facebook.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fantasy-flight-games.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fedex.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fedora.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\figma.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\firefox-browser.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\firefox.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\first-order-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\first-order.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\firstdraft.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\flickr.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\flipboard.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fly.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\font-awesome.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fonticons-fi.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fonticons.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fort-awesome-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fort-awesome.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\forumbee.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\foursquare.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\free-code-camp.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\freebsd.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\fulcrum.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\galactic-republic.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\galactic-senate.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\get-pocket.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gg-circle.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gg.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\git-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\git.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\github-alt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\github.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gitkraken.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gitlab.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gitter.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\glide-g.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\glide.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gofore.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\golang.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\goodreads-g.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\goodreads.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-drive.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-pay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-play.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-plus-g.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-plus.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google-wallet.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\google.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gratipay.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\grav.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gripfire.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\grunt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\guilded.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\gulp.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hacker-news.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hackerrank.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hashnode.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hips.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hire-a-helper.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hive.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hooli.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hornbill.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hotjar.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\houzz.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\html5.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\hubspot.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ideal.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\imdb.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\instagram.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\instalod.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\intercom.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\internet-explorer.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\invision.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ioxhost.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\itch-io.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\itunes-note.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\itunes.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\java.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\jedi-order.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\jenkins.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\jira.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\joget.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\joomla.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\js.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\jsfiddle.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\kaggle.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\keybase.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\keycdn.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\kickstarter-k.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\kickstarter.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\korvue.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\laravel.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\lastfm.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\leanpub.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\less.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\line.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\linkedin-in.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\linkedin.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\linode.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\linux.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\lyft.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\magento.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mailchimp.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mandalorian.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\markdown.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mastodon.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\maxcdn.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mdb.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\medapps.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\medium.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\medrt.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\meetup.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\megaport.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mendeley.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\meta.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\microblog.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\microsoft.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mix.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mixcloud.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mixer.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\mizuni.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\modx.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\monero.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\napster.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\neos.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\nfc-directional.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\nfc-symbol.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\nimblr.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\node-js.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\node.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\npm.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\ns8.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\nutritionix.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\octopus-deploy.svg" />
+    <Content Include="Assets\Images\lib\fontawesome\svgs\brands\odnoklassniki.svg" />
+    <Content Include="Assets\Images\LOGO.png" />
+    <Content Include="Assets\Images\product_logo.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Admin\Admin_Management.aspx" />
+    <Content Include="Views\Admin\Category_Management.aspx" />
+    <Content Include="Views\Admin\dashboard.aspx" />
+    <Content Include="Views\Admin\feedback.aspx" />
+    <Content Include="Views\Admin\Order_management.aspx" />
+    <Content Include="Views\Admin\Product_Manager.aspx" />
+    <Content Include="Views\Admin\User_management.aspx" />
+    <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Signup.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Management.aspx.cs">
+      <DependentUpon>Admin_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Management.aspx.designer.cs">
+      <DependentUpon>Admin_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Category_Management.aspx.cs">
+      <DependentUpon>Category_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Category_Management.aspx.designer.cs">
+      <DependentUpon>Category_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Order_management.aspx.cs">
+      <DependentUpon>Order_management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Order_management.aspx.designer.cs">
+      <DependentUpon>Order_management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Product_Manager.aspx.cs">
+      <DependentUpon>Product_Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Product_Manager.aspx.designer.cs">
+      <DependentUpon>Product_Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\User_management.aspx.cs">
+      <DependentUpon>User_management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\User_management.aspx.designer.cs">
+      <DependentUpon>User_management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\lib\fontawesome\less\brands.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\fontawesome.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\regular.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\solid.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\v4-shims.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_animated.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_bordered-pulled.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_core.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_fixed-width.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_icons.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_list.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_mixins.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_rotated-flipped.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_screen-reader.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_shims.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_sizing.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_stacked.less" />
+    <Content Include="Assets\Images\lib\fontawesome\less\_variables.less" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\categories.yml" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\icon-families.json" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\icon-families.yml" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\icons.json" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\icons.yml" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\shims.json" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\shims.yml" />
+    <Content Include="Assets\Images\lib\fontawesome\metadata\sponsors.yml" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\brands.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\fontawesome.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\regular.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\solid.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\v4-shims.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_animated.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_core.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_functions.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_icons.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_list.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_mixins.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_screen-reader.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_shims.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_sizing.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_stacked.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\scss\_variables.scss" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Assets\Images\lib\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\Admin\AdminMaster.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Admin\NewFolder1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57980</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44335/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

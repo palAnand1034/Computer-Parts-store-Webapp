@@ -1,0 +1,293 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Comp_peri_ecomm.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <!-- Add the correct paths for Bootstrap and jQuery -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <%--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
+    <!-- Semantic UI CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- fontawesome css (if needed) -->
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+    <title><%: Page.Title %> - Computer Peripherals Ecomm</title>
+
+    <asp:ContentPlaceHolder ID="Header" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <style>
+        /* Custom Styles */
+        body {
+            background-image: url('../imgs/Back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+
+
+        .search-bar {
+            /* Add Semantic UI classes for input and button */
+            margin-top: 10px;
+        }
+
+            .search-bar .form-control {
+                border-radius: 0;
+                border-color: #007bff; /* Change input border color */
+            }
+
+            .search-bar .btn {
+                border-radius: 0;
+                background-color: #007bff; /* Change button background color */
+                border-color: #007bff; /* Change button border color */
+                color: #fff; /* Change button text color */
+            }
+
+        /* Footer Styles */
+        .footer {
+            background: #000000;
+            padding-bottom: 50px;
+            padding-top: 80px;
+        }
+
+        .footer_menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+            .footer_menu ul li {
+                display: inline-block;
+            }
+
+                .footer_menu ul li a {
+                    color: #ffffff;
+                    padding: 0 10px;
+                }
+
+                    .footer_menu ul li a:hover {
+                        color: #ffffff;
+                    }
+
+        .footer_profile ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+            .footer_profile ul li {
+                display: inline-block;
+            }
+
+                .footer_profile ul li a {
+                    background: #808080;
+                    width: 40px;
+                    height: 40px;
+                    display: block;
+                    text-align: center;
+                    margin-right: 5px;
+                    border-radius: 50%;
+                    line-height: 40px;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    -webkit-transition: .3s;
+                    transition: .3s;
+                    color: #fff;
+                }
+
+        .footer_copyright {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #fff;
+        }
+    </style>
+    <form runat="server">
+        <div class="first-nav" style="background-image: url('../imgs/Back.jpg')";>
+            <nav class="navbar navbar-expand-lg navbar-light";>
+                <!-- Right Side: Search Bar -->
+
+                <!-- Centered Logo -->
+                <%--<a href="test.html">--%>
+                <img src="imgs/LOGO.png" alt="logo" width="190" height="60" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br />
+                <%--<a href="test.html">--%>
+                <%--&nbsp;--%>
+                <%--</a>--%>
+                <div class="right menu">
+                    <div class="item">
+                        <div class="ui action input">
+
+                    <asp:TextBox ID="txtSearch" runat="server" Height="32px" />
+                    <asp:Button ID="btnSearch" class="ui button" Text="Search" runat="server" OnClick="btnSearch_Click" BackColor="Transparent" Height="32px" Text-align="center" Font-Size="Medium" Font-Bold="True" />
+                </div>
+                        </div>
+                    </div>
+
+                <!-- Right Side: Registration -->
+                <ul class="navbar-nav ml-auto">
+                   <li class="nav-item active">
+        <asp:LinkButton CssClass="ui button teal" ID="User_login" runat="server" OnClick="User_login_Click"> User Login  </asp:LinkButton>
+    </li>
+    <li class="nav-item active">
+        <asp:LinkButton CssClass="ui button violet" ID="User_signup" runat="server" OnClick="User_signup_Click" Visible="False"> User Signup</asp:LinkButton>
+    </li>
+                    <li class="nav-item active">
+                        <asp:LinkButton CssClass="nav-link" ID="Logout" runat="server" OnClick="Logout_Click"> Logout</asp:LinkButton>
+                    </li>
+                    <li class="nav-item " id="After_log_main" runat="server" visible="False">
+
+                        <asp:LinkButton CssClass="nav-link" ID="After_log" runat="server" Visible="False"> Hello User </asp:LinkButton>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="Second-nav" style="background-color: black">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Left Side: Navigation Links -->
+                <!-- Categories Dropdown -->
+                <div class="container-fluid navbar-categories">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- Reduce the width of this column -->
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: transparent; background-color: transparent; font-size: larger; color: white;">
+                                    Categories
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                    <asp:Repeater ID="rptCategories" runat="server">
+                                        <ItemTemplate>
+                                            <a class="dropdown-item" href='<%# "Category.aspx?Category=" + Eval("Category") %>' style="color: #000000"><%# Eval("Category") %></a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Centered Navigation Links -->
+                        <div class="col-md-9 text-right">
+                            <!-- Adjusted width of this column -->
+                            <ul class="navbar-nav nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Default.aspx" style="color: white; font-size: larger;"><i class="home icon"></i>Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PrebuiltPC.aspx" style="color: white; font-size: larger;"><i class="desktop icon"></i>Prebuilt</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Cart and Wishlist -->
+                <!-- Right Side: Cart and Wishlist -->
+                <!-- Right Side: Cart and Wishlist -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cart.aspx" style="color: white; font-size: larger; margin-right: 10px;">
+                            <i class="fas fa-shopping-cart"></i>Cart
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Wishlist.aspx" style="color: white; font-size: larger;">
+                            <i class="fas fa-heart"></i>Wishlist 
+                        </a>
+                    </li>
+                    <%--YOUR ORDER--%>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="YourOrders.aspx" style="color: white; font-size: larger;">
+                            <i class="fas fa-shopping-bag"></i>Orders 
+                        </a>
+                    </li>
+                </ul>
+
+
+
+
+            </nav>
+        </div>
+
+
+        <%-- <div class="container body-content">--%>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <hr />
+        <%--</div>--%>
+
+        <!-- Footer -->
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <footer class="footer bg-black">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="Default.aspx" style="font-size: medium; color: #FFFFFF">Home</a></li>
+                            <li class="list-inline-item"><a href="PrebuiltPC.aspx" style="font-size: medium; color: #FFFFFF">Prebuilt</a></li>
+                            <li class="list-inline-item"><a href="Aboutus.aspx" style="font-size: medium; color: #FFFFFF">Aboutus</a></li>
+                            <li class="list-inline-item"><a href="feedback.aspx" style="font-size: medium; color: #FFFFFF">Feedback</a></li>
+                            <li class="list-inline-item"><a href="Contactus.aspx" style="font-size: medium; color: #FFFFFF">Contactus</a></li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#" style="font-size: xx-large; color: silver"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#" style="font-size: xx-large; color: silver"><i class="fab fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" style="font-size: xx-large; color: silver"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                        <p class="text" style="font-size: small; color: #FFFFFF">© 2024 DIGITECH. All Rights Reserved.</p>
+
+                        <!--- END COL -->
+                    </div>
+                    <!--- END ROW -->
+                </div>
+                <!--- END CONTAINER -->
+            </div>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                $('.carousel').carousel({
+                    interval: 2000 // Set the interval for automatic sliding in milliseconds
+                });
+            });
+
+            // Auto Slider Logic
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            let currentIndex = 0;
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % sliderWrapper.children.length;
+                updateSlider();
+            }
+
+            function updateSlider() {
+                const translateValue = -currentIndex * 100 + '%';
+                sliderWrapper.style.transform = 'translateX(' + translateValue + ')';
+            }
+
+
+        // Auto slide every 3 seconds (adjust the interval as needed)
+            /* setInterval(nextSlide, 3000);*/
+        </script>
+        <!-- ./Footer -->
+    </form>
+</body>
+</html>
